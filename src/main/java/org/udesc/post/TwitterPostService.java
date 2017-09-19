@@ -12,6 +12,7 @@ public class TwitterPostService implements PostService {
 	public void create(AuthDTO authDTO, PostDTO postDTO) {
 		TwitterPostClient
 				.connect( "http://localhost:8084" )
-				.create( authDTO.getUserId(), authDTO.getToken(), postDTO );
+				.create( authDTO.getConsumerKey(), authDTO.getConsumerSecret(), authDTO.getAccessToken(),
+						authDTO.getAccessTokenSecret(), postDTO );
 	}
 }

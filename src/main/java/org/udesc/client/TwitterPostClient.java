@@ -11,9 +11,12 @@ import feign.gson.GsonEncoder;
 
 public interface TwitterPostClient {
 
-	@RequestLine("POST /users/{userId}/posts")
-	@Headers({ "Content-Type: application/json", "X-Auth: ${token}" })
-	public void create(@Param("userId") String userId, @Param("token") String token, PostDTO postDTO);
+	@RequestLine("POST /posts")
+	@Headers({ "Content-Type: application/json", "X-ConsumerKey: ${consumerKey}", "X-ConsumerSecret: ${consumerSecret}",
+			"X-AccessToken: ${accessToken}", "X-AccessTokenSecret: ${accessTokenSecret}" })
+	public void create(@Param("consumerKey") String consumerKey, @Param("consumerSecret") String consumerSecret,
+			@Param("accessToken") String accessToken, @Param("accessTokenSecret") String accessTokenSecret,
+			PostDTO postDTO);
 
 	public static TwitterPostClient connect(String url) {
 		return Feign.builder()
