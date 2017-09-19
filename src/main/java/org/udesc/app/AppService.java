@@ -10,7 +10,7 @@ public class AppService {
 	public App getRandom() {
 		if (LocalDateTime.now().getSecond() % 2 == 0)
 			return App.FACEBOOK;
-		return App.GOOGLE;
+		return App.TWITTER;
 	}
 
 }

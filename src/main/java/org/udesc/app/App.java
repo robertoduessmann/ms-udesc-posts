@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum App {
-	FACEBOOK( "facebook" ), GOOGLE( "google" );
+	FACEBOOK( "facebook" ), GOOGLE( "google" ), TWITTER("twitter");
 
 	private String description;
 }

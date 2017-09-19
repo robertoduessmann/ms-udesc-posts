@@ -18,16 +18,18 @@ public class PostMediator {
 	private Map<App, PostService> postService;
 	private FacebookPostService facebookPostService;
 	private GooglePostService googlePostService;
+	private TwitterPostService twitterPostService;
 	private AuthService authService;
 	private AppService appService;
 
 	public PostMediator(FacebookPostService facebookPostService, GooglePostService googlePostService,
-			AuthService authService, AppService appService) {
+			TwitterPostService twitterPostService, AuthService authService, AppService appService) {
 		this.authService = authService;
 		this.appService = appService;
 		postService = new HashMap<>();
 		postService.put( App.FACEBOOK, facebookPostService );
 		postService.put( App.GOOGLE, googlePostService );
+		postService.put( App.TWITTER, twitterPostService);
 	}
 
 	public void create(PostDTO postDTO) {
