@@ -6,7 +6,7 @@ This app will be showed in UDESC event about microservices: https://www.eventbri
 
 ## Microservices mechanism
 
-![microservices](https://user-images.githubusercontent.com/9089383/30572813-4e7edef8-9cc6-11e7-9666-a62a33e8ed52.png)
+![image](https://user-images.githubusercontent.com/9089383/30618961-389b691e-9d73-11e7-80d3-36fd787f7e5f.png)
 
 ## New post form
 
