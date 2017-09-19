@@ -12,6 +12,6 @@ public class FacebookPostService implements PostService {
 	public void create(AuthDTO authDTO, PostDTO postDTO) {
 		FacebookPostClient
 				.connect( "http://localhost:8083" )
-				.create( authDTO.getUserId(), authDTO.getToken(), postDTO );
+				.create( authDTO.getToken(), postDTO );
 	}
 }

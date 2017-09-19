@@ -11,9 +11,9 @@ import feign.gson.GsonEncoder;
 
 public interface FacebookPostClient {
 
-	@RequestLine("POST /users/{userId}/posts")
+	@RequestLine("POST /posts")
 	@Headers({ "Content-Type: application/json", "X-Auth: ${token}" })
-	public void create(@Param("userId") String userId, @Param("token") String token, PostDTO postDTO);
+	public void create(@Param("token") String token, PostDTO postDTO);
 
 	public static FacebookPostClient connect(String url) {
 		return Feign.builder()
