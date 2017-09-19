@@ -3,6 +3,8 @@ package org.udesc.post;
 import java.util.HashMap;
 import java.util.Map;
 
+import lombok.extern.log4j.Log4j;
+
 import org.springframework.stereotype.Service;
 import org.udesc.app.App;
 import org.udesc.app.AppService;
@@ -10,6 +12,7 @@ import org.udesc.auth.AuthService;
 import org.udesc.dto.PostDTO;
 
 @Service
+@Log4j
 public class PostMediator {
 
 	private Map<App, PostService> postService;
@@ -29,6 +32,7 @@ public class PostMediator {
 
 	public void create(PostDTO postDTO) {
 		App app = appService.getRandom();
+		log.info( "[PostMediator] Creating post in..." + app.getDescription() );
 		postService.get( app ).create( authService.get( app ), postDTO );
 	}
 }

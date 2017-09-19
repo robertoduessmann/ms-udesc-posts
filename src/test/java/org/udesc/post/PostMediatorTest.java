@@ -54,6 +54,6 @@ public class PostMediatorTest {
 	}
 
 	private AuthDTO mockAuth() {
-		return new AuthDTO( "asdasdas7-das9-dasm0-7d7asda" );
+		return new AuthDTO( "123", "asdasdas7-das9-dasm0-7d7asda" );
 	}
 }
