@@ -11,7 +11,7 @@ import feign.gson.GsonEncoder;
 
 public interface AuthClient {
 
-	@RequestLine("GET /{app}/user/random")
+	@RequestLine("GET /token/{app}/random")
 	@Headers({ "Content-Type: application/json" })
 	public AuthDTO get(@Param("app") String app);
 
