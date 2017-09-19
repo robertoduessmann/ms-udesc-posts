@@ -12,6 +12,6 @@ public class GooglePostService implements PostService {
 	public void create(AuthDTO authDTO, PostDTO postDTO) {
 		GooglePostClient
 				.connect( "http://localhost:8082" )
-				.create( authDTO.getToken(), postDTO );
+				.create( authDTO.getUserId(), authDTO.getToken(), postDTO );
 	}
 }
